@@ -5,13 +5,8 @@ import java.util.*;
 public class CodeGenerator {
     
     public static String generateMK() {
-        return "MK" + System.currentTimeMillis();
-    }
-
-    public static String generateNIM() {
-        Random rand = new Random();
-        int number = rand.nextInt(900000000) + 100000000;
-        return String.valueOf(number);
+        // "MK-1298"
+        return "MK" + (new Random().nextInt(9000) + 1000);
     }
 
 }

@@ -8,7 +8,6 @@ import utils.CodeGenerator;
 public class Main {
     
     public static void main(String[] args) {
-        
         Scanner in = new Scanner(System.in);
         System.out.print("Masukkan nama mahasiswa: ");
         String nama = in.nextLine();
@@ -21,14 +20,12 @@ public class Main {
 
         KRS krs = new KRS(mhs);
         for (int i = 0; i < n; i++) {
-            System.out.print("Kode Matkul - " + (i+1) + ": ");
-            String kode_mk = in.next();
             in.nextLine();
             System.out.print("Nama Matkul - " + (i+1) + ": ");
             String nama_mk = in.nextLine();
             System.out.print("SKS Matkul - " + (i+1) + ": ");
             int sks = in.nextInt();
-            Matkul mk = new Matkul(kode_mk, nama_mk, sks);
+            Matkul mk = new Matkul(CodeGenerator.generateMK(), nama_mk, sks);
             krs.addMatkul(mk);
         }
 
